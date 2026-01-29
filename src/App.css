@@ -1,0 +1,237 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-bottom: 1px solid #3c3c3c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.app-header h1 {
+  margin: 0 0 1rem 0;
+  color: #4ec9b0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.control-btn {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.run-btn {
+  background-color: #4ec9b0;
+}
+
+.run-btn:hover:not(:disabled) {
+  background-color: #3aa990;
+}
+
+.run-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.control-btn:hover {
+  background-color: #005a9e;
+}
+
+.control-btn.listening {
+  background-color: #e51400;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+
+
+.terminal-container {
+  height: 150px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #3c3c3c;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007acc;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.terminal-header h3 {
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.clear-terminal-btn {
+  background-color: #dcdcdc;
+  color: #1e1e1e;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.clear-terminal-btn:hover {
+  background-color: #bbbbbb;
+}
+
+.terminal-output {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.terminal-line {
+  margin-bottom: 0.3rem;
+  white-space: pre-wrap;
+}
+
+.terminal-placeholder {
+  color: #888;
+  font-style: italic;
+  padding: 0.5rem;
+}
+
+.insert-btn, .clear-btn {
+  background-color: #3c3c3c;
+  color: white;
+  border: 1px solid #555;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.insert-btn:hover {
+  background-color: #4ec9b0;
+  color: #1e1e1e;
+}
+
+.clear-btn:hover {
+  background-color: #6a6a6a;
+}
+
+.unsupported {
+  color: #ff6b6b;
+  text-align: center;
+}
+
+.instructions-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.simple-instructions {
+  color: #4ec9b0;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.examples {
+  background-color: #2d2d2d;
+  border: 1px solid #3c3c3c;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.examples p {
+  color: #888;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.examples ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.examples li {
+  color: #d4d4d4;
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.editor-container {
+  flex: 1;
+  display: flex;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
